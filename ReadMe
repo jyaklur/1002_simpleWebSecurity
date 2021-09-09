@@ -1,0 +1,40 @@
+This is a very simple project to build webservice with security enabled and it is done just by selecting two dependencies from spring initializer and web security
+is enabled, you cannot access any URL without providing userid/pwd or disable security for certain URLs
+
+Dependencies
+Spring Web - WebBuild web, including RESTful, applications using Spring MVC. Uses Apache Tomcat as the default embedded container.
+Spring Security - SecurityHighly customizable authentication and access-control framework for Spring applications.
+
+
+All we are doing is using springboot framework and creating the project
+step1# Go to spring initializer https://start.spring.io/ on any web browser
+step2#
+You should see Project: Maven Project already selected, if not select it, by clicking on the radio button
+You should see Languages: Java already selected, if not select it, by clicking on the radio button
+select latest Spring Boot version , as of Sep 2021 '2.5.4' // don't select SNAPSHOT or M2 OR lower versions
+
+Project Metadata -  Group: com.yaklur, artifact:websecurity , everything else keep as is
+Packaging: Jar
+Java : 11
+
+ADD Dependencies : On right panel click on button "ADD DEPENDENCIES" ,  type "Spring Web" and add dependency from drop down and 
+type "Spring Security" click on button "ADD DEPENDENCIES" 
+
+Step3# click on "GENERATE" button below and save File. Your project is generated and saved in your local machine as a zip file.
+Check downloads folder or search for your zip file. unzip the file to a folder.
+
+Step4# Open intelliJ IDE or any IDE and select folder 'websecurity' your project is open
+
+step5# copy code from github repo @ https://github.com/jyaklur/1002_simpleWebSecurity
+
+step6# build and run
+
+Once Started look for the below in the logs to ensure security is enabled. You can use the username:"user" below pwd to login from a web browser
+From any web browser go to http://localhost:8002/ and you will be presented with a Please Sign in UI screen,  username=user , pwd=from the logs as below
+########################
+Using generated security password: a6c3f8f4-379b-4980-a2d9-2776f211253a
+
+2021-09-09 13:09:00.757  INFO 87003 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@753fd7a1, org.springframework.security.web.context.SecurityContextPersistenceFilter@40729f01, org.springframework.security.web.header.HeaderWriterFilter@5cbd94b2, org.springframework.security.web.csrf.CsrfFilter@bc6288b, org.springframework.security.web.authentication.logout.LogoutFilter@2d85fb64, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7c37f145, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3e36b7a0, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@12a2585b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@10c47c79, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d760326, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@575c3e9b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@21b6c9c2, org.springframework.security.web.session.SessionManagementFilter@756aadfc, org.springframework.security.web.access.ExceptionTranslationFilter@5eea5627, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@54089484]
+########################
+
+step7# from Web and postman test your service 
