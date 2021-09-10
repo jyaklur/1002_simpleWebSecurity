@@ -1,7 +1,9 @@
 package com.yaklur.websecurity;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
@@ -22,5 +24,4 @@ public class WebsecurityApplication extends WebSecurityConfigurerAdapter {
 				.and().formLogin()
 				.and().httpBasic();
 	}
-
 }

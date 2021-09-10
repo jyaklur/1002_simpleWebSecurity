@@ -41,6 +41,11 @@ Or from postman,  GET http://localhost:8002/  you will get 401 unauthorized , cl
 the dropdown list. enter username=user and Password=a6c3f8f4-379b-4980-a2d9-2776f211253a(from the logs Using generated security password:)
 Now you can hit the URL again to pass the security
 
+TO OVERRIDE THE DEFAULT user/pwd generted by spring , in application.properties add the below user.name & user.password , this will disable
+spring from generating a default username=user and password
+spring.security.user.name=john
+spring.security.user.password=johnny
+
 To bypass authentication only to certain URLs , use the below by overriding in any class which extends extends WebSecurityConfigurerAdapter
 in this example we are not creating any new class but using WebSecurityApplication itself to extend WebSecurityConfigurerAdapter
 @Override
